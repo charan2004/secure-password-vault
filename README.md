@@ -16,13 +16,13 @@ The system is built on a modular architecture to ensure separation of concerns a
 
 ```mermaid
 graph TD
-    User[User (CLI)] --> Auth[Authentication Module]
-    User --> Vault[Vault Management Module]
-    Auth --> DB[(PostgreSQL Database)]
-    Vault --> Crypto[Core Crypto Module]
-    Crypto --> DB
-    Vault --> Audit[Audit Service]
-    Audit --> DB
+    A[User CLI] --> B[Authentication Service]
+    A --> C[Vault Service]
+    B --> D[Database]
+    C --> E[Crypto Service]
+    E --> D
+    C --> F[Audit Service]
+    F --> D
 ```
 
 -   **Core Crypto**: Centralized cryptographic primitives (AES-GCM, Argon2id).
